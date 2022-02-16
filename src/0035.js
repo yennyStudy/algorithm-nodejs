@@ -11,9 +11,18 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-
-  push() {
+  push(val) {
     // YOUR CODE GOES HERE
+    let newNode = new Node(val);
+    if (this.head) {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
 
